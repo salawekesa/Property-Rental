@@ -1,4 +1,5 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 Type_Choices = (
@@ -25,12 +26,12 @@ Extra_Choices = (
 
 class Listing(models.Model):
     title = models.CharField(max_length=200)  
-    type = models.CharField(max_length=12, choices=Type_Choices, default='')
+    type = models.CharField(max_length=12, choices=Type_Choices, default=[], blank= False)
     town = models.CharField(max_length=200)
     specific_location = models.CharField(max_length=200)
     monthly_cost = models.IntegerField()
     description = models.CharField
-    extras = models.CharField(max_length=255, choices=Extra_Choices, default='')
+    extras = MultiSelectField(max_length=256, choices=Extra_Choices, default=[], blank=True)
     created = models.DateTimeField(auto_now_add=True)
     image = models.ImageField()
     

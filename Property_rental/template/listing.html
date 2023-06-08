@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'main.html' %}
+
+{%block content%}
 
     <div>
         <h2>{{ listing.title }}</h2>
         <p>{{ listing.type }}</p>
         <p>{{ listing.town }}</p>
         <p>{{ listing.monthly_cost }}</p>
+        <p>{{ listing.extras }}</p>
+
+        {% if listing.image %}
+            <img src="{{ listing.image.url }}" alt="{{ listing.title }}" />
+        {% endif %}
     </div>
     
 
-</body>
-</html>
+{% endblock %}
