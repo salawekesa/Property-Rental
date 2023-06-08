@@ -32,6 +32,8 @@ class Listing(models.Model):
     description = models.CharField
     extras = models.CharField(max_length=255, choices=Extra_Choices, default='')
     created = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField()
+    
 
     class Meta:
         ordering = ['-created', '-type', 'monthly_cost']
