@@ -29,3 +29,10 @@ def create_listing(request):
         "form":form    
     }
     return render(request, "create_listing.html", context)
+
+def property(request):
+    listings = Listing.objects.all()
+    context = {
+        "listings":listings
+    }
+    return render (request, 'property.html', context)

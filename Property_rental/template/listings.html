@@ -5,9 +5,10 @@
 
 
 
-    <section class="section-property section-t8">
-        <div class="container">
-          <div class="row">
+  <section class="section-property section-t8">
+
+    <div class="container">
+      <div class="row">
             <div class="col-md-12">
               <div class="title-wrap d-flex justify-content-between">
                 <div class="title-box">
@@ -20,26 +21,28 @@
                 </div>
               </div>
             </div>
-          </div>
+      </div>
           
-            
-              <div id="property-carousel" class="owl-carousel owl-theme">
-                {% for listing in listings %}
-                <div class="carousel-item-a">
-                  <div class="card-box-a card-shadow">
-                    <div class="img-box-a">
+        
+      <div id="property-carousel" class="owl-carousel owl-theme">
+
+        {% for listing in listings %}        
+        <div class="carousel-item-a">
+
+            <div class="card-box-a card-shadow">
+              <div class="img-box-a">
                       {% if listing.image %}
-                        <img src="{{ listing.image.url }}" alt="{{ listing.title }}" />
+                        <img src="{{ listing.image.url }}" alt="{{ listing.title }}" class="img-a img-fluid" style="height: 500px;" />
                       {% endif %}
-                    </div>
-                    <div class="card-overlay">
+              </div>
+              <div class="card-overlay">
                       <div class="card-overlay-a-content">
                         <div class="card-header-a">
                           <h2 class="card-title-a">
-                            {% for listing in listings %}
+                            
                             <a href="/listing/{{ listing.id }}/">{{ listing.title }}
                               <br /> {{ listing.town }}</a>
-                            {% endfor %}
+                           
                           </h2>
                         </div>
                         <div class="card-body-a">
@@ -73,15 +76,21 @@
                           </ul>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-            
-            {%  endfor %}
               </div>
+                    
+            </div>
+                
         </div>
-      </section>
-      <!--/ Property End /-->
+
+        {%  endfor %}
+
+      </div>
+
+          
+    </div>
+        
+  </section>
+
 
 
 

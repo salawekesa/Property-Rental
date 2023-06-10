@@ -1,14 +1,17 @@
-{% extends 'main.html' %}
+{% extends 'testmain.html' %}
 
 {%block content%}
 
-<form method="post" enctype="multipart/form-data">
+<div style="margin: 10rem 3rem 3rem 3rem;">
+    <form method="post" enctype="multipart/form-data">
 
-    {% csrf_token %}
-    {{ form.as_p}}
+        {% csrf_token %}
+        {{ form.as_p}}
+    
+        <button type="submit">submit</button>
+    
+    </form>
+</div>
 
-    <button type="submit">submit</button>
-
-</form>
 
 {% endblock %}

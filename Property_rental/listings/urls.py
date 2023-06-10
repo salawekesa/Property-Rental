@@ -6,6 +6,7 @@ from . import views
 
 urlpatterns = [
     path('', views.listings, name="listings"),
+    path('property/', views.property, name="property"),
     path('listing/<pk>/', views.listing, name="listing"),
     path('create/', views.create_listing, name="create_listing" )
 ]
