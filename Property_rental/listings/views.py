@@ -36,3 +36,9 @@ def property(request):
         "listings":listings
     }
     return render (request, 'property.html', context)
+
+def blogs(request):
+    return render(request, 'blogs.html')
+
+def contact_us(request):
+    return render(request, 'contact-us.html')
